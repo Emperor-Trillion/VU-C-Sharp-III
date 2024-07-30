@@ -1,0 +1,73 @@
+<Window x:Class="finalProject.DisplayResultWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:finalProject"
+    mc:Ignorable="d"
+    WindowStartupLocation="CenterScreen"
+    Title="Display Report" Height="300" FontSize="22" Width="500">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Grid for the first row with two TextBlock elements -->
+        <Grid Grid.Row="0" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Text="Decrypted Password: " Grid.Column="0" Height="30"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       FontSize="18" Margin="0,0,10,0" />
+            
+            <TextBlock Name="DecryptedPassword" Grid.Column="1" Height="30"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       FontSize="18" />
+        </Grid>
+
+        <!-- Grid for the second row with the aligned TextBlock elements -->
+        <Grid Grid.Row="1" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Total Time to Decrypt: " Grid.Column="0" Height="30"
+                       HorizontalAlignment="Right" VerticalAlignment="Center"
+                       FontSize="18" Margin="0,0,10,0" />
+
+            <TextBlock Name="TimeTaken" Grid.Column="1" Height="30"
+                       HorizontalAlignment="Left" VerticalAlignment="Center"
+                       FontSize="18" />
+        </Grid>
+
+        <!-- Grid for the Salt Used row with two TextBlock elements -->
+        <Grid Grid.Row="2" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Salt Used: " Grid.Column="0" Height="30"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       FontSize="18" Margin="0,0,10,0" />
+            
+            <TextBlock Name="SaltUsed" Grid.Column="1" Height="30"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       FontSize="18" />
+        </Grid>
+        
+        <Button Grid.Row="3" Name="Return" Content="Return" Height="30" 
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+            FontSize="18" Click="OnReturnClicked" />
+    </Grid>
+</Window>
